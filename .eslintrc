@@ -1,0 +1,33 @@
+{
+  "env": {
+    "browser": true,
+    "jest": true,
+    "es2021": true
+  },
+  "plugins": ["import"],
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "rules": {
+    "arrow-body-style": 0,
+    "react/prop-types": 0,
+    "no-nested-ternary": 0,
+    "no-console": "warn",
+    "no-eval": "error",
+    "import/first": "error",
+    "no-underscore-dangle": 0,
+    "no-use-before-define": 0,
+    "no-unused-vars": "warn",
+    "import/imports-first": ["error", "absolute-first"],
+    "import/newline-after-import": "error",
+    "import/no-unresolved": 0,
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/self-closing-comp": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/no-array-index-key": 0
+  }
+}
