@@ -1,14 +1,21 @@
 import { addTag } from 'actions/imageActions'
-import { useState } from 'react'
-import { Button, Card, Col, Form, Row } from 'react-bootstrap'
+import { Card, Col, Form, Row } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 
-const AddTag = ({ tags, imageId }) => {
+const AddTag = ({ imageId, imageTags, tags }) => {
+  const availableTags = tags.flatMap((tag, index) =>
+    imageTags.some((newTag) => newTag.label === tag.label) ? (
+      []
+    ) : (
+      <option key={index} value={tag.id}>
+        {tag.label}
+      </option>
+    )
+  )
   const dispatch = useDispatch()
-  const [selectedTag, selectedTagSet] = useState('')
 
   const handleChange = (event) => {
-    selectedTagSet(event.target.value)
+    dispatch(addTag(imageId, event.target.value))
   }
   return (
     <Card className="w-100">
@@ -18,20 +25,15 @@ const AddTag = ({ tags, imageId }) => {
       <Card.Body>
         <Form>
           <Row>
-            <Col xs="8">
-              <Form.Select aria-label="tags" onChange={handleChange}>
-                <option>Choose a tag...</option>
-                {tags.map((tag, index) => (
-                  <option key={index} value={tag.id}>
-                    {tag.label}
-                  </option>
-                ))}
-              </Form.Select>
-            </Col>
-            <Col xs="4 text-center">
-              <Button onClick={() => dispatch(addTag(imageId, selectedTag))}>
-                Add
-              </Button>
+            <Col xs="12" className="text-center">
+              {availableTags.length > 0 ? (
+                <Form.Select aria-label="tags" onChange={handleChange}>
+                  <option>Choose a tag...</option>
+                  {availableTags}
+                </Form.Select>
+              ) : (
+                <h6>No tags available</h6>
+              )}
             </Col>
           </Row>
         </Form>

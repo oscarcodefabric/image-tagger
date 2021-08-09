@@ -3,8 +3,8 @@ import { useEffect } from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import AddTag from './components/addTag/AddTag'
-import ImageTags from './components/imageTags'
-import SelectedImage from './components/selectedImage'
+import ImageTags from './components/imageTags/ImageTags'
+import SelectedImage from './components/selectedImage/SelectedImage'
 
 const ImageTaggerPage = () => {
   const dispatch = useDispatch()
@@ -25,12 +25,12 @@ const ImageTaggerPage = () => {
             </Card.Body>
             <Card.Footer>
               <h4> {image.title} </h4>
-              <ImageTags tags={image.tags} imageId={image.id} />
+              <ImageTags imageTags={image.tags} imageId={image.id} />
             </Card.Footer>
           </Card>
         </Col>
         <Col lg="3">
-          <AddTag tags={tags} imageId={image.id} />
+          <AddTag imageId={image.id} imageTags={image.tags} tags={tags}  />
         </Col>
       </Row>
     </div>

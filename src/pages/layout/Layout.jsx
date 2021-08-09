@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { Container, Col, Row } from 'react-bootstrap'
 
-import Nav from './components/navbar'
+import Nav from './components/navbar/Navbar'
 
 const Layout = ({ children }) => (
   <>

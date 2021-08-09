@@ -5,8 +5,8 @@ const initialState = {
   image: {
     id: 1,
     imageUrl:
-      'https://d500.epimg.net/cincodias/imagenes/2019/08/26/lifestyle/1566818317_265854_1566818366_noticia_normal.jpg',
-    title: 'Windows_10_:D',
+      'https://developer-chrome-com.imgix.net/image/0g2WvpbGRGdVs0aAPc6ObG7gkud2/DU7j6Ed17BVr0k2f7EBy.png',
+    title: 'image_title',
     tags: [
       { id: 5, label: 'Realism' },
       { id: 1, label: 'Abstract' },
@@ -18,6 +18,7 @@ const initialState = {
     { id: 2, label: 'Typography' },
     { id: 3, label: 'Graffiti' },
     { id: 5, label: 'Realism' },
+    { id: 6, label: 'Self-Portrait' },
   ],
   errorGettingImage: '',
   isGettingImage: false,

@@ -1,5 +1,5 @@
-import ImageTaggerPage from './pages/imageTagger'
-import Layout from './pages/layout'
+import ImageTaggerPage from './pages/imageTagger/ImageTaggerPage'
+import Layout from './pages/layout/Layout'
 
 const App = () => {
   return (
