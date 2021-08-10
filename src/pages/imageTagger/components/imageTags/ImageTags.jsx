@@ -13,12 +13,12 @@ const ImageTags = ({ imageTags, imageId }) => {
         {imageTags.length>0 ?
           imageTags.map((tag, index) => (
             <ButtonGroup key={index} size="sm" className="me-1 mb-1">
-              <Button variant="outline-secondary" className="text-break">
+              <Button variant="secondary"  className="text-break badge">
                 {tag.label}
               </Button>
-              <Button variant="secondary">
+              <Button variant="secondary" className="ps-0 badge">
                 <XOctagon
-                  size="18"
+                  size="15"
                   onClick={() => dispatch(removeTag(imageId, tag.id))}
                 />
               </Button>
