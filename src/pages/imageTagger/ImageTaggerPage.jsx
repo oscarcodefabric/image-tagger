@@ -18,9 +18,9 @@ const ImageTaggerPage = () => {
   return (
     <div className="image-tagger-checkin">
       <Row>
-        <Col lg="9">
+        <Col lg="9 mt-2 pe-lg-0">
           <Card className="w-100">
-            <Card.Body className="text-center">
+            <Card.Body className="text-center m-0 p-0">
               <SelectedImage imageSrc={image.imageUrl} />
             </Card.Body>
             <Card.Footer>
@@ -29,7 +29,7 @@ const ImageTaggerPage = () => {
             </Card.Footer>
           </Card>
         </Col>
-        <Col lg="3">
+        <Col lg="3 mt-2 ps-lg-0 text-center">
           <AddTag imageId={image.id} imageTags={image.tags} tags={tags}  />
         </Col>
       </Row>
